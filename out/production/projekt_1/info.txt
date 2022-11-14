@@ -1,0 +1,17 @@
+klasy gui i jakieś pierdy
+wejscie wyjscie - zapisywanie i wczytywanie z pliku (filmy i cechy kurwa w gui), a drugi plik to sale, zajęte miejsce i nazwa użytkownika kurwa
+Potem sortowanie
+wyjątki
+
+tabelka oddzielona separatorem
+kod filmu(string/int);nazwa(string);gatunek(string);rok(int);godzina(kurwa time);nmr_sali;cena
+
+
+PLIK REPETURAR I PLIK SEANS
+MAPA - TO OGARNIESZ
+fILM TO REPERTUAR RACZEJ
+A POTEM SEANS
+DOBRA CHUJ
+GUI DO ZROBIENIA!!!
+
+WYJATKI JAKIEŚ COŚ KURWA TEGO.
