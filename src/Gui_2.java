@@ -37,6 +37,13 @@ public class Gui_2 extends JFrame {
                 Gui_1 g = new Gui_1();
             }
         });
+        TworzSeans.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Gui_2.super.setVisible(false);
+                Gui_11 g = new Gui_11();
+            }
+        });
     }
 }
 

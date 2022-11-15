@@ -33,6 +33,7 @@ public class Gui_5 extends JFrame {
         String k[] = {"Tytuł", "Gatunek", "Rok", "Długość"};
         DefaultTableModel dtm = new DefaultTableModel(dane, k);
         table1.setModel(dtm);
+        table1.setDefaultEditor(Object.class, null);
         this.createUIComponents();
         this.setContentPane(this.MainPanel);
         this.setSize(620, 450);

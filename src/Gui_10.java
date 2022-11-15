@@ -36,6 +36,7 @@ public class Gui_10 extends JFrame {
         String k[] = {"Tytuł", "Gatunek", "Rok", "Długość"};
         DefaultTableModel dtm = new DefaultTableModel(dane, k);
         table1.setModel(dtm);
+        table1.setDefaultEditor(Object.class, null);
         this.createUIComponents();
         this.setContentPane(this.MainPanel);
         this.setSize(620, 460);
@@ -63,6 +64,7 @@ public class Gui_10 extends JFrame {
                 String k[] = {"Tytuł", "Gatunek", "Rok", "Długość"};
                 DefaultTableModel dtm = new DefaultTableModel(dane, k);
                 table1.setModel(dtm);
+                table1.setDefaultEditor(Object.class, null);
 
             }
         });
@@ -86,6 +88,7 @@ public class Gui_10 extends JFrame {
                 String k[] = {"Tytuł", "Gatunek", "Rok", "Długość"};
                 DefaultTableModel dtm = new DefaultTableModel(dane, k);
                 table1.setModel(dtm);
+                table1.setDefaultEditor(Object.class, null);
             }
         });
         wrocButton.addActionListener(new ActionListener() {
@@ -115,6 +118,7 @@ public class Gui_10 extends JFrame {
                 String k[] = {"Tytuł", "Gatunek", "Rok", "Długość"};
                 DefaultTableModel dtm = new DefaultTableModel(dane, k);
                 table1.setModel(dtm);
+                table1.setDefaultEditor(Object.class, null);
 
             }
         });

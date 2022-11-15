@@ -28,11 +28,11 @@ public class Gui_3 extends JFrame {
             gatunek.addItem(gatunek_l[i]); // dodanie do comboboxa
         }
         rok.addItem("rok");
-        for (int i = 1895; i < 2023; i++) {
+        for (int i = 2023; i > 1895; i--) {
             rok.addItem(String.valueOf(i));
         }
         dlugosc.addItem("długość");
-        for (int i = 1; i <= 240; i++) {
+        for (int i = 240; i <= 1; i--) {
             dlugosc.addItem(String.valueOf(i));
         }
         this.setContentPane(this.MainPanel);
