@@ -6,4 +6,11 @@ public class Sala {
     Sala() {
 // pusty konstruktor
     }
+
+    Sala(int n, int il)
+    {
+        this.numer=n;
+        this.ilosc_miejsc=il;
+        this.ilosc_zajetych=0;
+    }
 }

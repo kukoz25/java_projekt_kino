@@ -44,6 +44,13 @@ public class Gui_2 extends JFrame {
                 Gui_11 g = new Gui_11();
             }
         });
+        TworzRepetuar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Gui_2.super.setVisible(false);
+                Gui_12 g= new Gui_12();
+            }
+        });
     }
 }
 
