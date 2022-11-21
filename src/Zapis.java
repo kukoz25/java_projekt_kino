@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.io.*;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Zapis {
     public Zapis() {
@@ -56,5 +58,41 @@ public class Zapis {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public static void podmiana(String nazwa_p, String stary, String nowy) {
+        try{
+        Scanner sc = new Scanner(new File(nazwa_p));
+        //instantiating the StringBuffer class
+        StringBuffer buffer = new StringBuffer();
+        //Reading lines of the file and appending them to StringBuffer
+        while (sc.hasNextLine()) {
+            buffer.append(sc.nextLine() + System.lineSeparator());
+        }
+        String fileContents = buffer.toString();
+        sc.close();
+        fileContents = fileContents.replaceAll(stary, nowy);
+        //instantiating the FileWriter class
+        FileWriter writer = new FileWriter(nazwa_p);
+        writer.append(fileContents);
+        writer.flush();
+        JOptionPane.showMessageDialog(null, "Kupiono bilety");
+    }catch (Exception e)
+        {
+            System.out.println(e);
+        }
+
+    }
+
+    public static void zapis_dopliku_mapa(String nazwa_pliku, Map<Integer,String> mapka)
+    {
+        String tmp="";
+    for(Map.Entry<Integer,String> entry  : mapka.entrySet())
+    {
+        tmp = entry.getValue();
+    }
+    //System.out.println(tmp);
+        String[] data=tmp.split(";");
+        Zapis.zapis_dopliku(nazwa_pliku,data);
     }
 }

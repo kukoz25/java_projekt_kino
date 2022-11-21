@@ -32,7 +32,7 @@ public class Gui_3 extends JFrame {
             rok.addItem(String.valueOf(i));
         }
         dlugosc.addItem("długość");
-        for (int i = 240; i <= 1; i--) {
+        for (int i = 240; i >= 1; i--) {
             dlugosc.addItem(String.valueOf(i));
         }
         this.setContentPane(this.MainPanel);

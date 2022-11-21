@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Wczytywanie {
     public Wczytywanie() {
@@ -34,6 +36,18 @@ public class Wczytywanie {
         }
         //System.out.println(dane.length);
         return dane;
+    }
+
+    public static Map<Integer,String> wczytaj_mapa(String nazwa_plik)
+    {
+        Map<Integer,String> wcz = new HashMap<>();
+        String[] data=wczytaj(nazwa_plik);
+        for(int i=0;i< data.length;i++)
+        {
+            wcz.put(i,data[i]);
+        }
+        //System.out.println(wcz);
+        return wcz;
     }
 
 

@@ -27,6 +27,9 @@ public class Film {
     public String dajnazwe() {
         return this.nazwa;
     }
+    public String dajgatunek() {
+        return this.gatunek;
+    }
 
 
 }

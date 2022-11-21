@@ -35,7 +35,7 @@ public class Gui_12 extends JFrame {
                     for (int i = 0; i < czy_jest.length; i++) {
                         String data[] = czy_jest[i].split(";");
                         //System.out.println(data[0] + ";" + data[1] + ";" + data[2] + ";" + data[3] + ";");
-                        if (data[0].equals(nr_sali.getText()) && data[1].equals(il_m.getText())) { // sprawdzanie czy istnieje dokładnie taki sam
+                        if (data[0].equals(nr_sali.getText())) { // sprawdzanie czy istnieje dokładnie taki sam
                             xd = true;
                         }
 
@@ -49,6 +49,13 @@ public class Gui_12 extends JFrame {
                         Zapis.zapis_dopliku("sale.csv", dane_s);
                     }
                 }
+            }
+        });
+        wrocButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Gui_12.super.setVisible(false);
+                Gui_2 g = new Gui_2();
             }
         });
     }

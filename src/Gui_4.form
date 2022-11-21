@@ -8,12 +8,12 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="60b37" class="javax.swing.JButton" binding="pokazRepertuarButton">
+      <component id="60b37" class="javax.swing.JButton" binding="pokazSeanseButton">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Pokaż Repertuar"/>
+          <text value="Pokaż Seanse"/>
         </properties>
       </component>
       <component id="d7cf5" class="javax.swing.JLabel" binding="foto" custom-create="true">
@@ -24,12 +24,12 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="2ca" class="javax.swing.JButton" binding="pokazSeanseButton">
+      <component id="2ca" class="javax.swing.JButton" binding="pokazSaleButton">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Pokaż Seanse"/>
+          <text value="Pokaż Sale"/>
         </properties>
       </component>
       <component id="98576" class="javax.swing.JButton" binding="pokazFilmyButton">

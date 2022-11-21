@@ -6,8 +6,8 @@ public class Gui_4 extends JFrame {
     private JPanel MainPanel;
     private JLabel foto;
     private JButton pokazFilmyButton;
+    private JButton pokazSaleButton;
     private JButton pokazSeanseButton;
-    private JButton pokazRepertuarButton;
     private JButton wrocButton;
 
     public Gui_4() {
@@ -29,6 +29,20 @@ public class Gui_4 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 Gui_4.super.setVisible(false);
                 Gui_1 g = new Gui_1();
+            }
+        });
+        pokazSaleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Gui_4.super.setVisible(false);
+                Gui_13 g = new Gui_13();
+            }
+        });
+        pokazSeanseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Gui_4.super.setVisible(false);
+                Gui_14 g = new Gui_14();
             }
         });
     }
