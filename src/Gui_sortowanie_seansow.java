@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -8,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
-public class Gui_16 extends JFrame {
+public class Gui_sortowanie_seansow extends JFrame {
     private JPanel MainPanel;
     private JLabel foto;
     private JTable table1;
@@ -23,7 +22,7 @@ public class Gui_16 extends JFrame {
         foto = new JLabel(new ImageIcon("kinoteka kukoza.png")); //dodajemy zdjęcie logo
     }
 
-    Gui_16() {
+    Gui_sortowanie_seansow() {
         String[] p = Wczytywanie.wczytaj("seanse.csv");
         Map<Integer, String> mp = Wczytywanie.wczytaj_mapa("seanse.csv");
         List<Seans> seanse = new ArrayList<Seans>();
@@ -35,11 +34,10 @@ public class Gui_16 extends JFrame {
             data = tmp.split(";");
             seanse.add(new Seans(data[0], data[1], Integer.parseInt(data[2]), Integer.parseInt(data[3]), data[4], data[5], data[6]));
         }
-        SimpleDateFormat dat = new SimpleDateFormat("dd-MM-yyyy");
-        SimpleDateFormat h = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat dat = new SimpleDateFormat("dd-MM-yyyy");        SimpleDateFormat h = new SimpleDateFormat("HH:mm");
         //System.out.println(seanse.get(0).godzina);
         for (int i = 0; i < seanse.size(); i++) {
-            String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).s.numer + ";" + Integer.toString(seanse.get(i).s.ilosc_miejsc - seanse.get(i).s.ilosc_zajetych) + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
+            String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).s.numer + ";" + Integer.toString(seanse.get(i).s.ilosc_miejsc - seanse.get(i).s.ilosc_zajetych) + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
             p[i] = d;
         }
         String dane[][] = Arraytostring.przeróbdane4(p);
@@ -59,7 +57,7 @@ public class Gui_16 extends JFrame {
         wrocButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Gui_16.super.setVisible(false);
+                Gui_sortowanie_seansow.super.setVisible(false);
                 Gui_9 g = new Gui_9();
             }
         });
@@ -68,7 +66,7 @@ public class Gui_16 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int r = table1.getSelectedRow();
-                Gui_16.super.setVisible(false);
+                Gui_sortowanie_seansow.super.setVisible(false);
                 Gui_kupowanie g = new Gui_kupowanie(r);
             }
         });
@@ -105,24 +103,24 @@ public class Gui_16 extends JFrame {
                     seanse.add(new Seans(data[0], data[1], Integer.parseInt(data[5]), Integer.parseInt(data[7]), data[8], data[9], data[10]));
                 }
                 for (int i = 0; i < seanse.size(); i++) {
-                    String d1 = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).s.numer + ";" + Integer.toString(seanse.get(i).s.ilosc_miejsc - seanse.get(i).s.ilosc_zajetych) + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina) + ";" + seanse.get(i).m;
-                    String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).s.numer + ";" + Integer.toString(seanse.get(i).s.ilosc_miejsc - seanse.get(i).s.ilosc_zajetych) + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
-                    //System.out.println(d);
+                    String d1 = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).s.numer + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina) + ";" + seanse.get(i).m;
+                    String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).s.numer + ";" + Integer.toString(seanse.get(i).s.ilosc_miejsc - seanse.get(i).s.ilosc_zajetych) + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
+                    //System.out.println(d1);
                     p[i] = d;
                     p1[i] = d1;
                 }
                 File myObj = new File("seanse.csv");
                 myObj.delete();
                 String[] zmienna;
-                for (int i = 0; i < p.length; i++) {
+                for (int i = 0; i < p1.length; i++) {
                     zmienna = p1[i].split(";");
+                    //System.out.println(d1);
                     Zapis.zapis_dopliku("seanse.csv", zmienna);
                 }
                 String dane[][] = Arraytostring.przeróbdane4(p);
                 DefaultTableModel dtm = new DefaultTableModel(dane, k);
                 table1.setModel(dtm);
                 table1.setDefaultEditor(Object.class, null);
-
             }
         });
     }
@@ -202,11 +200,11 @@ public class Gui_16 extends JFrame {
         SimpleDateFormat h = new SimpleDateFormat("HH:mm");
         Map<Integer, String> map = new HashMap<>();
         for (int i = 0; i < seanse.size(); i++) {
-            String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).s.numer + ";" + Integer.toString(seanse.get(i).s.ilosc_miejsc - seanse.get(i).s.ilosc_zajetych) + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina) + ";" + seanse.get(i).m;
+            String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).s.numer + ";" + Integer.toString(seanse.get(i).s.ilosc_miejsc - seanse.get(i).s.ilosc_zajetych) + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina) + ";" + seanse.get(i).m;
             //System.out.println(d);
             map.put(i, d);
         }
-        //System.out.println(filmy.size());
+        //System.out.println(seanse.size());
         return map;
     }
 

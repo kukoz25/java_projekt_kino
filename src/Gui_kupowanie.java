@@ -50,7 +50,7 @@ public class Gui_kupowanie{
         frame.add(o);
         JLabel e = new JLabel("EKRAN");
         size = e.getPreferredSize();
-        e.setBounds(170, 230, size.width, size.height);
+        e.setBounds(150, 230, size.width+15, size.height);
         frame.add(e);
         JLabel ilosc_z = new JLabel(Integer.toString(seanse.get(r).s.ilosc_zajetych));
         size = ilosc_z.getPreferredSize();
@@ -70,7 +70,7 @@ public class Gui_kupowanie{
         frame.add(ilosc_wol);
         JButton kup = new JButton("Kup Bilet");
         size = kup.getPreferredSize();
-        kup.setBounds(350, 340, size.width, size.height);
+        kup.setBounds(350, 340, size.width+15, size.height);
         frame.add(kup);
         JButton wroc = new JButton("Wróć");
         size = wroc.getPreferredSize();
@@ -123,7 +123,7 @@ public class Gui_kupowanie{
                 //System.out.println(old);
                 JOptionPane.showMessageDialog(null, "Wybrano miejsca " + kupione);
                 Zapis.podmiana("seanse.csv", old, neww);
-                Gui_16 h=new Gui_16();
+                Gui_sortowanie_seansow h=new Gui_sortowanie_seansow();
                 frame.setVisible(false);
             }
         });
@@ -131,7 +131,7 @@ public class Gui_kupowanie{
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                Gui_16 h=new Gui_16();
+                Gui_sortowanie_seansow h=new Gui_sortowanie_seansow();
             }
         });
     }

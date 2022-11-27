@@ -8,14 +8,6 @@
     <properties/>
     <border type="bevel-raised"/>
     <children>
-      <component id="8a6df" class="javax.swing.JButton" binding="tworzenieButton" default-binding="true">
-        <constraints>
-          <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Tworzenie"/>
-        </properties>
-      </component>
       <component id="50b91" class="javax.swing.JLabel" binding="foto" custom-create="true">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
@@ -30,6 +22,14 @@
         </constraints>
         <properties>
           <text value="Wczytywanie"/>
+        </properties>
+      </component>
+      <component id="8a6df" class="javax.swing.JButton" binding="tworzenieButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Tworzenie"/>
         </properties>
       </component>
       <component id="8e328" class="javax.swing.JButton" binding="wrocButton">

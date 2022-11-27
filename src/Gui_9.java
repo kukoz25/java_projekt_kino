@@ -35,7 +35,7 @@ public class Gui_9 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Gui_9.super.setVisible(false);
-                Gui_16 g = new Gui_16();
+                Gui_sortowanie_seansow g = new Gui_sortowanie_seansow();
             }
         });
     }

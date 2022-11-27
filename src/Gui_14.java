@@ -30,7 +30,7 @@ public class Gui_14 extends JFrame {
         SimpleDateFormat h = new SimpleDateFormat("HH-mm");
         //System.out.println(seanse.get(0).godzina);
         for (int i = 0; i < seanse.size(); i++) {
-            String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).s.numer + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
+            String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).s.numer + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
             p[i] = d;
         }
         String dane[][] = Arraytostring.przeróbdane3(p);
@@ -69,7 +69,7 @@ public class Gui_14 extends JFrame {
                 SimpleDateFormat h = new SimpleDateFormat("HH-mm");
                 //System.out.println(seanse.get(0).godzina);
                 for (int i = 0; i < seanse.size(); i++) {
-                    String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).s.numer + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
+                    String d = seanse.get(i).kod + ";" + seanse.get(i).f.nazwa + ";" + seanse.get(i).f.gatunek + ";" + seanse.get(i).f.rok + ";" + seanse.get(i).f.dlugosc + ";" + seanse.get(i).s.numer + ";" + seanse.get(i).cena + ";" + dat.format(seanse.get(i).data) + ";" + h.format(seanse.get(i).godzina);
                     p[i] = d;
                 }
                 String dane[][] = Arraytostring.przeróbdane3(p);

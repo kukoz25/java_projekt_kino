@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Gui_11 extends JFrame {
+public class Gui_tworzenie_seansu extends JFrame {
     private JPanel MainPanel;
     private JLabel foto;
     private JComboBox film;
@@ -25,7 +25,7 @@ public class Gui_11 extends JFrame {
         foto = new JLabel(new ImageIcon("kinoteka kukoza.png")); //dodajemy zdjęcie logo
     }
 
-    public Gui_11() {
+    public Gui_tworzenie_seansu() {
         this.i=0;
         this.mapka=new HashMap<>();
         this.createUIComponents();
@@ -103,41 +103,50 @@ public class Gui_11 extends JFrame {
         dodajSeansButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (podajKodTextField.getText().equals("Podaj kod")) {
-                    JOptionPane.showMessageDialog(null, "Któraś rubryka zawiera niepoprawne dane, popraw je");
-                } else {
-                    boolean xd = false; // do sprawdzenia czy istnieje
-                    String[] czy_jest = Wczytywanie.wczytaj("seanse.csv");
-                    for (int i = 0; i < czy_jest.length; i++) {
-                        String data[] = czy_jest[i].split(";");
-                        //System.out.println(data[0] + ";" + data[1] + ";" + data[2] + ";" + data[3] + ";");
-                        if (data[0].equals(podajKodTextField.getText()) && data[1].equals(film.getSelectedItem().toString()) && data[2].equals(sala.getSelectedItem().toString()) && data[3].equals(cena.getSelectedItem().toString()) && data[4].equals(Data.getSelectedItem().toString()) && data[5].equals(godzina.getSelectedItem().toString())) { // sprawdzanie czy istnieje dokładnie taki sam
-                            xd = true;
-                        }
-
+                try {
+                    if (podajKodTextField.getText().equals("Podaj kod")|| podajKodTextField.getText().isEmpty()) {
+                        throw new CustomException("Kod nie może być pusty");
                     }
-                    if (xd == true) {
-                        JOptionPane.showMessageDialog(null, "Taki seans istnieje, dodaj inny seans!");
-                    } else {
-                        String m="";
-                        for(int i=0; i<25;i++)
+                    else {
+                        try{
+                        boolean xd = false; // do sprawdzenia czy istnieje
+                        String[] czy_jest = Wczytywanie.wczytaj("seanse.csv");
+                        for (int i = 0; i < czy_jest.length; i++) {
+                            String data[] = czy_jest[i].split(";");
+                            //System.out.println(data[0] + ";" + data[1] + ";" + data[2] + ";" + data[3] + ";");
+                            if (data[0].equals(podajKodTextField.getText()) && data[1].equals(film.getSelectedItem().toString()) && data[2].equals(sala.getSelectedItem().toString()) && data[3].equals(cena.getSelectedItem().toString()) && data[4].equals(Data.getSelectedItem().toString()) && data[5].equals(godzina.getSelectedItem().toString())) { // sprawdzanie czy istnieje dokładnie taki sam
+                                xd = true;
+                            }
+
+                        }
+                        if (xd == true) {
+                            throw new CustomException("Taki seans istnieje, dodaj inny seans!");
+                        } else {
+                            String m = "";
+                            for (int i = 0; i < 25; i++) {
+                                m = m + "0";
+                            }
+                            List<String> dane = Arrays.asList(podajKodTextField.getText(), film.getSelectedItem().toString(), sala.getSelectedItem().toString(), cena.getSelectedItem().toString(), Data.getSelectedItem().toString(), godzina.getSelectedItem().toString(), m);
+                            String[] dane_s = dane.stream().toArray(String[]::new);
+                            mapka.put(i, Arraytostring.zamiennastringa(dane_s));
+
+                            //System.out.println("chuj");
+                            Zapis.zapis_dopliku_mapa("seanse.csv", mapka);
+                        }
+                        }catch (CustomException ex)
                         {
-                            m=m+"0";
+                            JOptionPane.showMessageDialog(null, ex.getMessage(), "Błąd", JOptionPane.ERROR_MESSAGE);
                         }
-                        List<String> dane = Arrays.asList(podajKodTextField.getText(), film.getSelectedItem().toString(), sala.getSelectedItem().toString(), cena.getSelectedItem().toString(), Data.getSelectedItem().toString(), godzina.getSelectedItem().toString(),m);
-                        String[] dane_s = dane.stream().toArray(String[]::new);
-                        mapka.put(i,Arraytostring.zamiennastringa(dane_s));
-
-                        //System.out.println("chuj");
-                        Zapis.zapis_dopliku_mapa("seanse.csv", mapka);
                     }
+                } catch (CustomException ex) {
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Błąd", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
         wrocButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Gui_11.super.setVisible(false);
+                Gui_tworzenie_seansu.super.setVisible(false);
                 Gui_2 g = new Gui_2();
             }
         });

@@ -41,7 +41,7 @@ public class Gui_2 extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Gui_2.super.setVisible(false);
-                Gui_11 g = new Gui_11();
+                Gui_tworzenie_seansu g = new Gui_tworzenie_seansu();
             }
         });
         TworzRepetuar.addActionListener(new ActionListener() {

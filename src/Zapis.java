@@ -76,6 +76,7 @@ public class Zapis {
         FileWriter writer = new FileWriter(nazwa_p);
         writer.append(fileContents);
         writer.flush();
+        writer.close();
         JOptionPane.showMessageDialog(null, "Kupiono bilety");
     }catch (Exception e)
         {
